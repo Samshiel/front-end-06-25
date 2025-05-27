@@ -1,0 +1,21 @@
+<div>Aktiivse keele lühend: {{keel}}</div>
+<button (click)="muudaKeel('et')">Eesti</button>
+<button (click)="muudaKeel('en')">English</button>
+<button (click)="muudaKeel('es')">Espanol</button>
+<button (click)="muudaKeel('ru')">Русский</button>
+
+@if (keel == 'et') {
+    <div>Leht on eesti keelne</div>
+}
+@else if (keel == 'en') {
+    <div>Page is in English</div>
+}
+@else if (keel == 'es') {
+    <div>La página está en español.</div>
+}
+@else if (keel == 'ru') {
+   <div>Страница на русском языке.</div> 
+}
+@if (keel != 'et') {
+    <div>Other translations other than Estonian are not ready</div>
+}
