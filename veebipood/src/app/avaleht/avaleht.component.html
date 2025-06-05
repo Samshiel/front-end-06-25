@@ -1,9 +1,12 @@
-<img src="/laigitud.svg" alt="">
-<img src="/mittelaigitud.svg" alt="">
+@if(laigitud === true) {
+    <img (click)="laigitud = false" src="/laigitud.svg" alt="">
+} @else {
+    <img (click)="laigitud = true" src="/mittelaigitud.svg" alt="">
+}
 <br/><br/>
 
-<div>Sõnum: xx</div>
-<button>Tagasi nulli</button>
-<button>-</button>
-<span>0</span>
-<button>+</button>
+<div>Sõnum: {{tegevus}}</div>
+<button [disabled]="kogus === 0" (click)="nulli()">Tagasi nulli</button>
+<button [disabled]="kogus === 0" (click)="vahenda()">-</button>
+<span>{{kogus}}</span>
+<button (click)="suurenda()">+</button>

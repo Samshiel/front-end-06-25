@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './ostukorv.component.css'
 })
 export class OstukorvComponent {
-
+  tooted = ["Coca", "Fanta", "Sprite"];
 }

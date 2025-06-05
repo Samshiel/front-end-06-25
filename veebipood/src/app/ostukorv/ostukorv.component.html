@@ -1,4 +1,8 @@
-<button>Tühjenda</button>
-<div>Ostukorvis on xx eset</div>
+<button (click)="tooted = []">Tühjenda</button>
+<div>Ostukorvis on {{tooted.length}} eset</div>
+
+@for (toode of tooted; track $index) {
+    <div>{{toode}}</div>
+}
 
 <div>Ostukorvi kogusumma on xx€</div>

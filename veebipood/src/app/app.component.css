@@ -1,10 +1,11 @@
 .pilt {
-    width: 100px;
-    height: 100px;
+    max-width: 90%;
+    height: auto;
 }
 
 .pilt:hover {
     cursor: pointer;
+    background: black;
     opacity: 70%;
 }
 
@@ -26,4 +27,10 @@
 
 .nupp:active {
  text-decoration: underline;   
+}
+
+.body{
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: gold;
 }

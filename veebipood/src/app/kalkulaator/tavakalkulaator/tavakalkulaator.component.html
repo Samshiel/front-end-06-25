@@ -1,0 +1,29 @@
+@if (operaator === '+') {
+    <div>{{number}} + 2.0.42 =  {{(number + 2.042).toFixed(3)}}</div>
+} @else if (operaator === '-') {
+    <div>{{number}} - 2.0.42 =  {{(number - 2.042).toFixed(3)}}</div>
+} @else if (operaator === '*') {
+    <div>{{number}} * 2.0.42 =  {{(number * 2.042).toFixed(3)}}</div>
+} @else if (operaator === '/') {
+    <div>{{number}} / 2.0.42 =  {{(number / 2.042).toFixed(3)}}</div>
+}
+
+<button (click)="number = 9">9</button>
+<button (click)="number = 8">8</button>
+<button (click)="number = 7">7</button>
+<button (click)="operaator = '+'">+</button> <br/>
+
+<button (click)="number = 6">6</button>
+<button (click)="number = 5">5</button>
+<button (click)="number = 4">4</button>
+<button (click)="operaator = '-'">-</button> <br/>
+
+<button (click)="number = 3">3</button>
+<button (click)="number = 2">2</button>
+<button (click)="number = 1">1</button>
+<button (click)="operaator = '*'">*</button> <br/>
+
+<button (click)="operaator = '/'">/</button>
+<button (click)="number = 0">0</button>
+<button>.</button>
+<button>=</button>

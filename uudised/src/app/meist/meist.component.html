@@ -1,0 +1,25 @@
+<div>Meie töötajad: </div> <br/>
+<div>Arvo Pärt</div>
+<button (click)="tel = 'arvo'">Võta ühendust</button>
+<div>Uudisklippide taustamuusika</div> <br/>
+<div>Kelly Sildaru</div>
+<button (click)="tel = 'kelly'">Võta ühendust</button>
+<div>Püstolreporter</div> <br/>
+<div>Edward von Lõngus</div>
+<button (click)="tel = 'edward'">Võta ühendust</button>
+<div>Uudiste kujundamine</div> <br/>
+<div>Kerli Kõiv</div>
+<button (click)="tel = 'kerli'">Võta ühendust</button>
+<div>Välisturgude spetsialist</div>
+
+<br/>
+
+@if (tel === "arvo") {
+    <div>Kontakt : +37253123456</div>
+} @else if (tel === "kelly") {
+    <div>Kontakt : +37253775432</div>
+} @else if (tel === "edward") {
+    <div>Kontakt : +37256754335</div>
+} @else if (tel === "kerli") {
+    <div>Kontakt : +37253567565</div>
+}

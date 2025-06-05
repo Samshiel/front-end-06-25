@@ -1,10 +1,19 @@
-<button>20€</button>
-<button>50€</button>
-<button>100€</button>
-<div>Kinkekaart xx €</div>
+<button (click)="summa = 20">20€</button>
+<button (click)="summa = 50">50€</button>
+<button (click)="summa = 100">100€</button>
+<div>Kinkekaart {{summa}} €</div>
 
 <br/><br/>
 
-<button>-</button>
-<span>1</span>
-<button>+</button>
+<button 
+    [disabled]="kogus === 1" 
+    (click)="kogus = kogus - 1"
+>-</button>
+<span>{{kogus}}</span>
+<button (click)="kogus = kogus + 1">+</button>
+<br/>
+<div>{{summa * kogus}}€</div>
+<br/>
+<label>Email</label><br/>
+<input [(ngModel)]="email" type="text"><br/>
+<button (click)="sisesta()">Sisesta</button>

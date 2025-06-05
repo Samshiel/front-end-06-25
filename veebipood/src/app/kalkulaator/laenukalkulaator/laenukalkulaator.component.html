@@ -1,0 +1,32 @@
+<label>Kinnisvara ostuhind</label>
+<input [(ngModel)]="ostuhind" (ngModelChange)="arvutaProtsent()" type="number"><br/>
+
+<label>Sissemakse</label>
+<input [(ngModel)]="sissemakse" (ngModelChange)="arvutaProtsent()" type="number"><br/>
+
+<label>Protsent</label>
+<input disabled [(ngModel)]="protsent" type="number"><br/>
+
+<label>Laenusumma</label>
+<input disabled [(ngModel)]="laenusumma" type="number"><br/>
+
+<label>Periood</label>
+<select [(ngModel)]="periood">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+    <option>25</option>
+    <option>30</option>
+</select> <br/>
+
+<label>Marginaal</label>
+<input [(ngModel)]="marginaal" (ngModelChange)="arvutaIntress()" type="number"><br/>
+
+<label>Euribor</label>
+<input [(ngModel)]="euribor" (ngModelChange)="arvutaIntress()" type="number"><br/>
+
+<label>Intress kokku</label>
+<input disabled [(ngModel)]="intress" type="text"><br/><br/>
+
+<div>Kuumakse: {{arvutaKuumakse()}}€</div>
+<div>Juhul kui sinu laenu intress peaks tõusma 7%-ni, on sinu laenumakse {{arvutaKorgendatudKuumakse()}}€</div>

@@ -1,20 +1,22 @@
-<div>Hetkel aktiivne linn: xx</div>
-<button>Tallinn</button>
-<button>Tartu</button>
-<button>Narva</button>
-<button>Pärnu</button>
+<div>Hetkel aktiivne linn: {{linn}}</div><br/>
+<button (click)="linn = 'Tallinn'">Tallinn</button>
+<button (click)="linn = 'Tartu'">Tartu</button>
+<button (click)="linn = 'Narva'">Narva</button>
+<button (click)="linn = 'Pärnu'">Pärnu</button>
+<br/><br/>
 
+@if (linn === "Tallinn") {
 <div>Ülemiste</div>
 <div>Kristiine</div>
 <div>Rocca al Mare</div>
 <div>Vesse</div>
 <div>Järveotsa</div>
 <div>Magistrali</div>
-
-<div>Lõunakeskus</div>
-<div>Raatuse</div>
-
-<div>Fama</div>
-
-<div>Port Artur 2</div>
-
+} @else if (linn === "Tartu") {
+    <div>Lõunakeskus</div>
+    <div>Raatuse</div>    
+} @else if (linn === "Narva") {
+    <div>Fama</div>
+} @else if (linn === "Pärnu") {
+    <div>Port Artur 2</div>
+}

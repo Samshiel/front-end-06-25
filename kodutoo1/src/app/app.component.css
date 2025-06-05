@@ -1,0 +1,57 @@
+.nupp{
+    color: rgba(220, 220, 220, 0.644);
+    background-color: green;
+}
+
+.nupp:hover{
+    height: 100px;
+}
+
+.nupp:active{
+    cursor: grab;
+}
+
+.sinineTekst{
+    color: blue;
+    font-style: italic;
+}
+
+.sinineTekst:hover{
+    font-size: 24px;
+}
+
+.rohelineTekst{
+    color: green;
+    font-weight: bold;
+    -webkit-text-stroke: 1px red;
+}
+
+.rohelineTekst:hover {
+    -webkit-text-stroke: 1px brown;
+}
+
+.pilt {
+    height: 200px;
+    width: 300px;
+}
+
+.pilt:hover{
+    border-radius: 50px;
+    opacity: 70%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

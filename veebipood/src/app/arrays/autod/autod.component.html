@@ -1,0 +1,20 @@
+<button (click)="sorteeriAZ()">Sorteeri A-Z</button>
+<button (click)="sorteeriZA()">Sorteeri Z-A</button>
+<button (click)="sorteeriSuurim()">Sorteeri tähed kasvavalt</button>
+<button (click)="sorteeriVaiksem()">Sorteeri tähed kahanevalt</button>
+<button (click)="sorteerikolmasAZ()">Sorteeri kolmas täht A-Z</button>
+<br/>
+<button (click)="filtreeriIgaLoppevad()">Filtreeri Iga lõppevad</button>
+<button (click)="filtreeri6Tahelised()">Filtreeri 6 tähelised</button>
+<button (click)="filtreeriKuni7Tahelised()">Filtreeri kuni 7 tähelised</button>
+<button (click)="filtreeriLyhendEs()">Filtreeri millel lühed es</button>
+<button (click)="filtreeriTeineTahtE()">Filtreeri millel teine täht e</button>
+<br/><br/>
+<div>Autode koguarv: {{autod.length}}tk</div><br/>
+
+@for (auto of autod; track $index) {
+    <div>{{auto}}</div>
+}
+<br/>
+<button (click)="autod = autodCopy">Taasta</button> <br/>
+<button routerLink="/arrays-home" class="nupp">Tagasi Arrayd</button>

@@ -1,0 +1,11 @@
+<div>Hindu kokku: {{hinnad.length}}</div>
+<button (click)="sorteeriKasvavalt()">Sorteeri kasvavalt</button>
+<button (click)="sorteeriKahanevalt()">Sorteeri kahanevalt</button>
+<button (click)="filtreeriSuuremadKui500()">Filtreeri suuremad kui 500</button>
+<button (click)="filtreeriVaiksemadKui10()">Filtreeri väiksemad kui 10</button>
+@for (hind of hinnad; track $index) {
+    <div>{{hind}}</div>
+}
+<br/>
+<button (click)="hinnad = hinnadCopy">Taasta</button> <br/>
+<button routerLink="/arrays-home" class="nupp">Tagasi Arrayd</button>
