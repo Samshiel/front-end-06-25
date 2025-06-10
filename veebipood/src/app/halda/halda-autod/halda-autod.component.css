@@ -1,0 +1,15 @@
+.nupp {
+    background-color: brown;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.nupp:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.nupp:active {
+ text-decoration: underline;   
+}

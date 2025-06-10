@@ -1,1 +1,20 @@
-<p>tooted works!</p>
+<button (click)="tooted = this.fjaS.sorteeriAZ(tooted)">sorteeri A-Z</button>
+<button (click)="tooted = this.fjaS.sorteeriZA(tooted)">sorteeri Z-A</button>
+<button (click)="tooted = this.fjaS.sorteeriSuurim(tooted)">sorteeri tähed kasvavalt</button>
+<button (click)="tooted = this.fjaS.sorteeriVaiksem(tooted)">sorteeri tähed kahanevalt</button>
+<button (click)="tooted = this.fjaS.sorteeriteineAZ(tooted)">sorteeri teine täht A-Z</button>
+<br/>
+<button (click)="tooted = this.fjaS.filtreeriKuni6Tahelised(tooted)">kuni 6 tähelised</button>
+<button (click)="tooted = this.fjaS.filtreeri6Tahelised(tooted)">täpselt 6 tähelised</button>
+<button (click)="tooted = this.fjaS.filtreeriALoppuga(tooted)">a-ga lõppevad</button>
+<button (click)="tooted = this.fjaS.filtreeriLoppevadY(tooted)">y-ga lõppevad</button>
+<button (click)="tooted = this.fjaS.filtreeriPaarisArvTahti(tooted)">paaristähti arv sisalduviad</button>
+<br/><br/>
+<div>Toodete koguarv: {{tooted.length}}tk</div><br/>
+
+@for (toode of tooted; track $index) {
+    <div>{{toode}}</div>
+}
+<br/>
+<button (click)="tooted = tootedCopy">Taasta</button> <br/>
+<button routerLink="/arrays-home" class="nupp">Tagasi Arrayd</button>

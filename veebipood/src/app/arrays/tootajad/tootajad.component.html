@@ -1,1 +1,27 @@
-<p>tootajad works!</p>
+<button (click)="tootajad = this.fjaS.sorteeriAZ(tootajad)">Sorteeri A-Z</button>
+<button (click)="tootajad = this.fjaS.sorteeriZA(tootajad)">Sorteeri Z-A</button>
+<button (click)="tootajad = this.fjaS.sorteeriSuurim(tootajad)">Sorteeri tähed kasvavalt</button>
+<button (click)="tootajad = this.fjaS.sorteeriVaiksem(tootajad)">Sorteeri tähed kahanevalt</button>
+<button (click)="tootajad = this.fjaS.sorteeriteineAZ(tootajad)">Sorteeri Teine täht A-Z</button>
+<button (click)="tootajad = this.fjaS.sorteeriSonadeArvu(tootajad)">Sorteeri sõnade arvu järgi</button>
+<br/>
+<button (click)="tootajad = this.fjaS.filtreeriTapselt3Tahelised(tootajad)">Täpselt 3 tähelised</button>
+<button (click)="tootajad = this.fjaS.filtreeriRohkemKui5Tahelised(tootajad)">Rohkem kui 5 tähelised</button>
+<button (click)="tootajad = this.fjaS.filtreeriLyhendAi(tootajad)">"ai" lühendit sisaldavad</button>
+<button (click)="tootajad = this.fjaS.filtreeriKellelNeljasTahtI(tootajad)">Kellel on neljas täht "i"</button>
+<button (click)="tootajad = this.fjaS.filtreeriMTahegaAlgavad(tootajad)">'M' tähega algavad</button>
+<br/>
+<button (click)="tootajad = this.fjaS.filtreeriPaarisArvTahti(tootajad)">Huvitav: Paarisarv tähti</button>
+<button (click)="tootajad = this.fjaS.filtreeriALoppuga(tootajad)">filtreeri a'ga lõppevad</button>
+<button (click)="tootajad = this.fjaS.filtreerivahemalt5Tahelised(tootajad)">vähemalt 5 tähelised</button>
+<button (click)="tootajad = this.fjaS.filtreeriTapselt5tahelised(tootajad)">täpselt 5 tähelised</button>
+<button (click)="tootajad = this.fjaS.filtreeriLyhendigaIn(tootajad)">'in' lühendit sisaldavad</button>
+<button (click)="tootajad = this.fjaS.filtreeriKellelTeineTahtA(tootajad)">kellel on 2's täht "a"</button>
+<br/><br/>
+
+@for (tootaja of tootajad; track $index) {
+    <div>{{tootaja}}</div>
+}
+<br/>
+<button (click)="tootajad = tootajadCopy">Taasta</button> <br/>
+<button routerLink="/arrays-home" class="nupp">Tagasi Arrayd</button>

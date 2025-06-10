@@ -1,0 +1,21 @@
+<label >Esindus</label> <br/>
+<input [(ngModel)]="esindus" type="number"><br/>
+<button (click)="lisa()">Lisa</button>
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Hind</th>
+            <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (esindus of tallinnaEsindused; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{esindus}}</td>
+                <td><button class="nupp" (click)="kustuta($index)">x</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

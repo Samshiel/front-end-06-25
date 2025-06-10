@@ -1,0 +1,21 @@
+<label >Auto</label> <br/>
+<input [(ngModel)]="auto" type="text"><br/>
+<button class="nupp" (click)="lisa()">Lisa</button>
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Auto nimi</th>
+            <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (auto of autod; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{auto}}</td>
+                <td><button class="nupp" (click)="kustuta($index)">x</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

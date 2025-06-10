@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { HindService } from '../../services/hind.service';
 
 @Component({
   selector: 'app-hinnad',
@@ -7,23 +8,30 @@ import { RouterLink } from '@angular/router';
   templateUrl: './hinnad.component.html',
   styleUrl: './hinnad.component.css'
 })
-export class HinnadComponent {
-  hinnad = [1,4,3,887,5,44,7,21,9,19,12,123,55,21,17]
+export class HinnadComponent implements OnInit {
+  constructor(private hindService: HindService) {}
+
+  hinnad: number[] = [];
   hinnadCopy = this.hinnad;
+  
+  ngOnInit(): void {
+    this.hinnad = this.hindService.hinnad.slice();
+    this.hinnadCopy = this.hinnad
+  }
 
   sorteeriKasvavalt() {
-    this.hinnad = this.hinnad.sort((a,b) => a - b);
+    this.hinnad = this.hindService.hinnad.sort((a,b) => a - b);
   }
 
   sorteeriKahanevalt() {
-    this.hinnad = this.hinnad.sort((a,b) => b - a);
+    this.hinnad = this.hindService.hinnad.sort((a,b) => b - a);
   }
 
   filtreeriSuuremadKui500() {
-    this.hinnad = this.hinnad.filter(hind => hind > 500)
+    this.hinnad = this.hindService.hinnad.filter(hind => hind > 500)
   }
 
   filtreeriVaiksemadKui10() {
-    this.hinnad = this.hinnad.filter(hind => hind < 10)
+    this.hinnad = this.hindService.hinnad.filter(hind => hind < 10)
   }
 }
