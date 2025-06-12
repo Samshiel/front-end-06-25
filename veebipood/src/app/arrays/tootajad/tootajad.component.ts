@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FiltridJaSort } from '../filtridjasort';
 import { RouterLink } from '@angular/router';
+import { TootajaService } from '../../services/tootaja.service';
 
 @Component({
   selector: 'app-tootajad',
@@ -10,18 +11,12 @@ import { RouterLink } from '@angular/router';
 })
 export class TootajadComponent {
   fjaS = new FiltridJaSort();
-  tootajad = [
-    "Mark",
-    "Oliver",
-    "Martin",
-    "Kristofer Robin",
-    "Marek",
-    "Sander",
-    "Hanna Lisete",
-    "Eva Sofia",
-    "Marta",
-    "Emma Maria",
-    "Laura"
-  ];
+  tootajad: string[] = [];
+
+  constructor(private tootajadService: TootajaService) {}
+  
+  ngOnInit() {
+    this.tootajad = this.tootajadService.tootajad.slice();
+  }
   tootajadCopy = this.tootajad;
 }

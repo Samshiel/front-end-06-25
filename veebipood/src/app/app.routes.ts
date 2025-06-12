@@ -20,6 +20,7 @@ import { HaldaKasutajadComponent } from './halda/halda-kasutajad/halda-kasutajad
 import { HaldaTootajadComponent } from './halda/halda-tootajad/halda-tootajad.component';
 import { HaldaTootedComponent } from './halda/halda-tooted/halda-tooted.component';
 import { HaldaEsindusedComponent } from './halda/halda-esindused/halda-esindused.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 export const routes: Routes = [
     {path: "", component: AvalehtComponent},
@@ -42,5 +43,6 @@ export const routes: Routes = [
     {path: "halda-kasutajad", component: HaldaKasutajadComponent},
     {path: "halda-tootajad", component: HaldaTootajadComponent},
     {path: "halda-tooted", component: HaldaTootedComponent},
+    {path: "contact-us", component: ContactUsComponent},
     {path: "**", component: NotFoundComponent}
 ];

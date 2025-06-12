@@ -1,0 +1,13 @@
+@if (saadetud) {
+  <div style="color: green;">Saadetud</div>
+}
+<form class="contact-form" (submit)="sendEmail($event)">
+  <label>Nimi</label>
+  <input type="text" name="name"> <br/>
+  <label>E-mail</label>
+  <input type="email" name="title"> <br/>
+  <label>Sõnum</label>
+  <textarea name="message"></textarea> <br/>
+  <input type="range" min="1" max="5" name="rating"> <br/>
+  <input type="submit" value="Saada"> <br/>
+</form>

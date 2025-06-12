@@ -13,23 +13,9 @@
     transform: scale(90%);
 }
 
-.nupp {
-    background-color: brown;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.nupp:hover {
-    background-color: darkred;
-    cursor: pointer;
-}
-
-.nupp:active {
- text-decoration: underline;   
-}
-
 .body{
+    width: auto;
+    height: auto;
     margin: 0 !important;
     padding: 0 !important;
     background-color: gold;

@@ -1,1 +1,21 @@
-<p>halda-tooted works!</p>
+<label >Tooted</label> <br/>
+<input [(ngModel)]="toode" type="text"><br/>
+<button class="nupp" (click)="lisa()">Lisa</button>
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Toodete nimed</th>
+            <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (toode of tooted; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{toode}}</td>
+                <td><button class="nupp" (click)="kustuta($index)">x</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

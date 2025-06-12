@@ -1,1 +1,21 @@
-<p>halda-tootajad works!</p>
+<label >Töötaja</label> <br/>
+<input [(ngModel)]="tootaja" type="text"><br/>
+<button class="nupp" (click)="lisa()">Lisa</button>
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Töötaja nimi</th>
+            <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (tootaja of tootajad; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{tootaja}}</td>
+                <td><button class="nupp" (click)="kustuta($index)">x</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
