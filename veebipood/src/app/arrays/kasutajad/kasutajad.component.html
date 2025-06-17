@@ -1,1 +1,4 @@
-<p>kasutajad works!</p>
+<div>Registeerinud kasutajad</div>
+@for (kasutaja of kasutajad; track $index) {
+    <div>{{kasutaja.email}}</div>
+}

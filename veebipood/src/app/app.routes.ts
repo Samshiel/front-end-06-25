@@ -21,6 +21,8 @@ import { HaldaTootajadComponent } from './halda/halda-tootajad/halda-tootajad.co
 import { HaldaTootedComponent } from './halda/halda-tooted/halda-tooted.component';
 import { HaldaEsindusedComponent } from './halda/halda-esindused/halda-esindused.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SingupComponent } from './auth/singup/singup.component';
 
 export const routes: Routes = [
     {path: "", component: AvalehtComponent},
@@ -44,5 +46,7 @@ export const routes: Routes = [
     {path: "halda-tootajad", component: HaldaTootajadComponent},
     {path: "halda-tooted", component: HaldaTootedComponent},
     {path: "contact-us", component: ContactUsComponent},
+    {path: "login", component:LoginComponent},
+    {path: "signup", component:SingupComponent},
     {path: "**", component: NotFoundComponent}
 ];

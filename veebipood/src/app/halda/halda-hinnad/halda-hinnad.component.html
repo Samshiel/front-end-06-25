@@ -1,11 +1,14 @@
 <label >Hind</label> <br/>
-<input [(ngModel)]="hind" type="number"><br/>
+<input [(ngModel)]="hind.number" type="number"><br/>
+<label >Hind</label> <br/>
+<input [(ngModel)]="hind.sonana" type="text"><br/>
 <button (click)="lisa()">Lisa</button>
 <table>
     <thead>
         <tr>
             <th>Index</th>
             <th>Hind</th>
+            <th>Sõna</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -13,7 +16,8 @@
         @for (hind of hinnad; track $index) {
             <tr>
                 <td>{{$index}}</td>
-                <td>{{hind}}</td>
+                <td>{{hind.number}}</td>
+                <td>{{hind.sonana}}</td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

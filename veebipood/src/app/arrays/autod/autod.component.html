@@ -13,7 +13,8 @@
 <div>Autode koguarv: {{autod.length}}tk</div><br/>
 
 @for (auto of autod; track $index) {
-    <div>{{auto}}</div>
+    <div>{{auto.nimi}} - {{auto.hind}}€</div>
+    <button (click)="lisaOstuKorvi(auto)">Lisa Ostukorvi</button>
 }
 <br/>
 <button (click)="reset()">Taasta</button> <br/>

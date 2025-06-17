@@ -1,11 +1,21 @@
 <label >Auto</label> <br/>
-<input [(ngModel)]="auto" type="text"><br/>
+<input [(ngModel)]="auto.nimi" type="text"><br/>
+<label >Auto hind</label> <br/>
+<input [(ngModel)]="auto.hind" type="number"><br/>
+<label >Auto pilt</label> <br/>
+<input [(ngModel)]="auto.pilt" type="text"><br/>
+<label >Auto aktiivne</label> <br/>
+<input [(ngModel)]="auto.aktiivne" type="checkbox"><br/>
 <button class="nupp" (click)="lisa()">Lisa</button>
 <table>
     <thead>
         <tr>
             <th>Index</th>
             <th>Auto nimi</th>
+            <th>Auto hind</th>
+            <th>Aktiivne</th>
+            <th>AutoPilt</th>
+
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -13,7 +23,10 @@
         @for (auto of autod; track $index) {
             <tr>
                 <td>{{$index}}</td>
-                <td>{{auto}}</td>
+                <td>{{auto.nimi}}</td>
+                <td>{{auto.hind}}</td>
+                <td>{{auto.aktiivne}}</td>
+                <td><img class="pilt" src={{auto.pilt}}></td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

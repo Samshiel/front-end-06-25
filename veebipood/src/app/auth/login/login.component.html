@@ -1,0 +1,9 @@
+@if (sisselogitud) {
+    <div>Olete juba sisse loginud</div>
+} @else {
+    <label>Email</label>
+    <input [(ngModel)]="kasutaja.email" type="text"><br/>
+    <label>Parool</label>
+    <input [(ngModel)]="kasutaja.parool" type="password"><br/>
+    <button (click)="logiSisse()">Logi Sisse</button>
+}

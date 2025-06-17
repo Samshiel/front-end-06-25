@@ -11,8 +11,8 @@ import { HindService } from '../../services/hind.service';
 export class HinnadComponent implements OnInit {
   constructor(private hindService: HindService) {}
 
-  hinnad: number[] = [];
-  hinnadCopy = this.hinnad;
+  hinnad: { number: number; sonana: string; }[] = [];
+  hinnadCopy = [{ number: 0, sonana: "" }];
   
   ngOnInit(): void {
     this.hinnad = this.hindService.hinnad.slice();
@@ -20,18 +20,18 @@ export class HinnadComponent implements OnInit {
   }
 
   sorteeriKasvavalt() {
-    this.hinnad = this.hindService.hinnad.sort((a,b) => a - b);
+    this.hinnad = this.hindService.hinnad.sort((a,b) => a.number - b.number);
   }
 
   sorteeriKahanevalt() {
-    this.hinnad = this.hindService.hinnad.sort((a,b) => b - a);
+    this.hinnad = this.hindService.hinnad.sort((a,b) => b.number - a.number);
   }
 
   filtreeriSuuremadKui500() {
-    this.hinnad = this.hindService.hinnad.filter(hind => hind > 500)
+    this.hinnad = this.hindService.hinnad.filter(hind => hind.number > 500)
   }
 
   filtreeriVaiksemadKui10() {
-    this.hinnad = this.hindService.hinnad.filter(hind => hind < 10)
+    this.hinnad = this.hindService.hinnad.filter(hind => hind.number < 10)
   }
 }

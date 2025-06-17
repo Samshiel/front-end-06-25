@@ -12,19 +12,20 @@ export class HaldaHinnadComponent implements OnInit {
   constructor(private hindService: HindService) {
   }
 
-  hinnad: number[] = []
-  hind = 0;
+  hinnad: { number: number; sonana: string; }[] = []
+  hind = { number: 0, sonana: "" };
 
   ngOnInit(): void {
     this.hinnad = this.hindService.hinnad;
   }
 
   lisa() {
-    if(this.hind <= 0) {
+    if(this.hind.number <= 0) {
       alert("Peab olema positiivne number!")
       return;
     }
     this.hinnad.push(this.hind);
+    this.hind = { number: 0, sonana: "" };
   }
 
   kustuta(i: number) {

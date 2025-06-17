@@ -4,7 +4,7 @@
 <button (click)="filtreeriSuuremadKui500()">Filtreeri suuremad kui 500</button>
 <button (click)="filtreeriVaiksemadKui10()">Filtreeri väiksemad kui 10</button>
 @for (hind of hinnad; track $index) {
-    <div>{{hind}}</div>
+    <div>{{hind.number}} - {{hind.sonana}}</div>
 }
 <br/>
 <button (click)="hinnad = hinnadCopy">Taasta</button> <br/>

@@ -9,8 +9,8 @@ import { AutoService } from '../../services/auto.service';
   styleUrl: './halda-autod.component.css'
 })
 export class HaldaAutodComponent implements OnInit {  
-  autod: string[] = [];
-  auto = "";
+  autod: { nimi: string; hind: number; aktiivne: boolean; pilt: string; }[] = [];
+  auto = { nimi: "", hind: 0, aktiivne: false, pilt: "" };
 
   constructor(private autoService: AutoService) {
     //Failiühenduse jaoks
@@ -21,11 +21,12 @@ export class HaldaAutodComponent implements OnInit {
   }
 
   lisa() {
-    if(this.auto.length === 0) {
+    if(this.auto.nimi.length === 0) {
       alert("Auto nimi ei saa olla tühi!")
       return;
     }
     this.autod.push(this.auto);
+    this.auto = { nimi: "", hind: 0, aktiivne: false, pilt: "" };
   }
 
   kustuta(i: number) {

@@ -6,7 +6,7 @@
 }
 
 @for (toode of tooted; track $index) {
-    <span>{{toode}}</span>
+    <span>{{toode.nimi}}</span>
     <button class="nupp" (click)="kustuta($index)">x</button>
     <br/>
 }

@@ -11,13 +11,13 @@
             <a class="nav-link" routerLink="/ostukorv">{{'nav.cart' | translate}}</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" routerLink="/kinkekaardid">{{'nav.add-product' | translate}}</a>
+            <a class="nav-link" routerLink="/kinkekaardid">{{'nav.coupons' | translate}}</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" routerLink="/seaded">{{'nav.add-product' | translate}}</a>
+            <a class="nav-link" routerLink="/lisa-toode">{{'nav.add-product' | translate}}</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" routerLink="/lisa-toode">{{'nav.settings' | translate}}</a>
+            <a class="nav-link" routerLink="/seaded">{{'nav.settings' | translate}}</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" routerLink="/kalkulaator">{{'nav.calculator' | translate}}</a>
@@ -29,11 +29,14 @@
             <a class="nav-link" routerLink="/halda-home">{{'nav.modify_data' | translate}}</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" routerLink="/halda-home">{{'nav.contact-us' | translate}}</a>
+            <a class="nav-link" routerLink="/contact-us">{{'nav.contact-us' | translate}}</a>
             </li>
         </ul>
         <button class="nupp" (click)="translate.use('et')">ET</button>
         <button class="nupp" (click)="translate.use('en')">EN</button> <br/>
+        <span routerLink="/login">Login </span>
+        <span>|</span>
+        <span routerLink="/signup"> Registeeru</span>
         <div class="dash"></div>
         </div>
     </div>

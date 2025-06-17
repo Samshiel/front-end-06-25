@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AutoService } from '../../services/auto.service';
+import { OstukorvService } from '../../services/ostukorv.service';
 
 @Component({
   selector: 'app-autod',
@@ -9,10 +10,13 @@ import { AutoService } from '../../services/auto.service';
   styleUrl: './autod.component.css'
 })
 export class AutodComponent implements OnInit {
-autod: string[] = []; 
+autod: { nimi: string; hind: number; aktiivne: boolean; pilt: string; }[] = []; 
 autodCopy = this.autod;
 
-constructor(private autoService: AutoService) {}
+constructor(
+  private autoService: AutoService,
+  private ostukorService: OstukorvService
+) {}
 
 ngOnInit() {
   this.autod = this.autoService.autod.slice();
@@ -31,37 +35,41 @@ sorteeriZA() {
 }
 
 sorteeriVaiksem() {
-  this.autod = this.autoService.autod.sort((auto_a, auto_b) => auto_a.length - auto_b.length);
+  this.autod = this.autoService.autod.sort((auto_a, auto_b) => auto_a.nimi.length - auto_b.nimi.length);
 }
 
 sorteeriSuurim() {
-  this.autod = this.autoService.autod.sort((auto_a, auto_b) => auto_b.length - auto_a.length);
+  this.autod = this.autoService.autod.sort((auto_a, auto_b) => auto_b.nimi.length - auto_a.nimi.length);
 }
 
 sorteerikolmasAZ() {
   // auto_a[2] auto_a.at(2)
-  this.autod = this.autoService.autod.sort((auto_a, auto_b) => auto_a.charAt(2).localeCompare(auto_b.charAt(2)));
+  this.autod = this.autoService.autod.sort((auto_a, auto_b) => auto_a.nimi.charAt(2).localeCompare(auto_b.nimi.charAt(2)));
 }
 
 filtreeriIgaLoppevad() {
   //endsWith("i")
-  this.autod = this.autoService.autod.filter(auto => auto[auto.length - 1] === "i");
+  this.autod = this.autoService.autod.filter(auto => auto.nimi[auto.nimi.length - 1] === "i");
 }
 
 filtreeri6Tahelised() {
-  this.autod = this.autoService.autod.filter(auto => auto.length === 6)
+  this.autod = this.autoService.autod.filter(auto => auto.nimi.length === 6)
 }
 
 filtreeriKuni7Tahelised() {
-  this.autod = this.autoService.autod.filter(auto => auto.length <= 7)
+  this.autod = this.autoService.autod.filter(auto => auto.nimi.length <= 7)
 }
 
 filtreeriLyhendEs() {
-  this.autod = this.autoService.autod.filter(auto => auto.includes("es"))
+  this.autod = this.autoService.autod.filter(auto => auto.nimi.includes("es"))
 }
  
 filtreeriTeineTahtE() {
-  this.autod = this.autoService.autod.filter(auto => auto[1] === "e")
+  this.autod = this.autoService.autod.filter(auto => auto.nimi[1] === "e")
+}
+
+lisaOstuKorvi(auto: any) {
+  this.ostukorService.ostukorv.push(auto);
 }
 
 }

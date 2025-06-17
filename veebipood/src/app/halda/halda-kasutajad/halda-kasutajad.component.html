@@ -1,1 +1,25 @@
-<p>halda-kasutajad works!</p>
+<label >E-Mail</label> <br/>
+<input [(ngModel)]="kasutaja.email" type="text"><br/>
+<label >Parool</label> <br/>
+<input [(ngModel)]="kasutaja.parool" type="text"><br/>
+<button (click)="lisa()">Lisa</button>
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Email</th>
+            <th>Parool</th>
+            <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (kasutaja of kasutajad; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{kasutaja.email}}</td>
+                <td>{{kasutaja.parool}}</td>
+                <td><button class="nupp" (click)="kustuta($index)">x</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

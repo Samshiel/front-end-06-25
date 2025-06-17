@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToodeService } from '../../services/toode.service';
 import { FormsModule } from '@angular/forms';
 
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './halda-tooted.component.html',
   styleUrl: './halda-tooted.component.css'
 })
-export class HaldaTootedComponent {
+export class HaldaTootedComponent implements OnInit {
     tooted: string[] = [];
     toode = "";
   
