@@ -15,7 +15,7 @@
             <th>Auto hind</th>
             <th>Aktiivne</th>
             <th>AutoPilt</th>
-
+            <th>Muuda</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -27,6 +27,7 @@
                 <td>{{auto.hind}}</td>
                 <td>{{auto.aktiivne}}</td>
                 <td><img class="pilt" src={{auto.pilt}}></td>
+                <td><button class="nupp" routerLink="/muuda-auto/{{$index}}">x</button></td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

@@ -2,15 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AutoService } from '../../services/auto.service';
 import { OstukorvService } from '../../services/ostukorv.service';
+import { FormsModule } from '@angular/forms';
+import { Toode } from '../../models/toode';
 
 @Component({
   selector: 'app-autod',
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './autod.component.html',
   styleUrl: './autod.component.css'
 })
 export class AutodComponent implements OnInit {
-autod: { nimi: string; hind: number; aktiivne: boolean; pilt: string; }[] = []; 
+otsitavaAutoNimi: string = "";
+autod: Toode[] = []; 
 autodCopy = this.autod;
 
 constructor(
@@ -68,8 +71,15 @@ filtreeriTeineTahtE() {
   this.autod = this.autoService.autod.filter(auto => auto.nimi[1] === "e")
 }
 
-lisaOstuKorvi(auto: any) {
-  this.ostukorService.ostukorv.push(auto);
+lisaOstuKorvi(auto: Toode) {
+  // this.ostukorService.ostukorv.push(auto);
+  const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv") || "[]");
+  ostukorvLS.push(auto);
+  localStorage.setItem("osukorv", JSON.stringify(ostukorvLS));
+}
+
+otsi() {
+  this.autod = this.autoService.autod.filter(auto => auto.nimi.toLocaleLowerCase().includes(this.otsitavaAutoNimi.toLocaleLowerCase()))
 }
 
 }

@@ -1,11 +1,21 @@
-<label >Töötaja</label> <br/>
-<input [(ngModel)]="tootaja" type="text"><br/>
+<label >Töötaja eesnimi</label> <br/>
+<input [(ngModel)]="tootaja.eesnimi" type="text"><br/>
+<label >Töötaja perenimi</label> <br/>
+<input [(ngModel)]="tootaja.pereNimi" type="text"><br/>
+<label >Vanus</label> <br/>
+<input [(ngModel)]="tootaja.vanus" type="number"><br/>
+<label >Ametikoht</label> <br/>
+<input [(ngModel)]="tootaja.ametikoht" type="text"><br/>
 <button class="nupp" (click)="lisa()">Lisa</button>
 <table>
     <thead>
         <tr>
             <th>Index</th>
-            <th>Töötaja nimi</th>
+            <th>Töötaja eesnimi</th>
+            <th>Töötaja perenimi</th>
+            <th>Vanus</th>
+            <th>Ametikoht</th>
+            <th>Aktiivne</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -13,7 +23,11 @@
         @for (tootaja of tootajad; track $index) {
             <tr>
                 <td>{{$index}}</td>
-                <td>{{tootaja}}</td>
+                <td>{{tootaja.eesnimi}}</td>
+                <td>{{tootaja.pereNimi}}</td>
+                <td>{{tootaja.vanus}}</td>
+                <td>{{tootaja.ametikoht}}</td>
+                <td>{{tootaja.aktiivne}}</td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

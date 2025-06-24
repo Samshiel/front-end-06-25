@@ -1,4 +1,5 @@
 <div>Registeerinud kasutajad</div>
 @for (kasutaja of kasutajad; track $index) {
     <div>{{kasutaja.email}}</div>
+    <button routerLink="/kasutaja/{{kasutaja.email}}">Vt Lähemalt</button>
 }

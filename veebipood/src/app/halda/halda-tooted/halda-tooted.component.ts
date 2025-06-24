@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToodeService } from '../../services/toode.service';
 import { FormsModule } from '@angular/forms';
+import { Toode } from '../../models/toode';
 
 @Component({
   selector: 'app-halda-tooted',
@@ -9,8 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './halda-tooted.component.css'
 })
 export class HaldaTootedComponent implements OnInit {
-    tooted: string[] = [];
-    toode = "";
+    tooted: Toode[] = [];
+    toode = { nimi: "", hind: 0, aktiivne: false, pilt: "" };
   
     constructor(private toodeService: ToodeService) {
     }
@@ -20,7 +21,7 @@ export class HaldaTootedComponent implements OnInit {
     }
   
     lisa() {
-      if(this.toode.length === 0) {
+      if(this.toode.nimi.length === 0) {
         alert("Toote nimi ei saa olla tühi!")
         return;
       }

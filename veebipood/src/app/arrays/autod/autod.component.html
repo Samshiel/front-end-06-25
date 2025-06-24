@@ -12,10 +12,15 @@
 <br/><br/>
 <div>Autode koguarv: {{autod.length}}tk</div><br/>
 
+<label>Otsi</label>
+<input [(ngModel)]="otsitavaAutoNimi" (ngModelChange)="otsi()" type="text">
+<br/><br/>
+
 @for (auto of autod; track $index) {
     <div>{{auto.nimi}} - {{auto.hind}}€</div>
     <button (click)="lisaOstuKorvi(auto)">Lisa Ostukorvi</button>
+    <button routerLink="/auto/{{auto.nimi}}">Vt Lähemalt</button>
 }
-<br/>
+<br/><br/>
 <button (click)="reset()">Taasta</button> <br/>
 <button routerLink="/arrays-home" class="nupp">Tagasi Arrayd</button>

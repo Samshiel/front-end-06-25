@@ -1,3 +1,11 @@
-<label>Toote nimi</label><br/>
-<input [(ngModel)]="toode" type="text"><br/>
-<button mat-button color="primary" (click)="lisa()">Lisa</button><br/>
+<form #lisaTooteVorm="ngForm" (submit)="lisa(lisaTooteVorm)">
+    <label >Auto</label> <br/>
+    <input ngModel name="nimi" type="text"><br/>
+    <label >Auto hind</label> <br/>
+    <input ngModel name="hind" type="number"><br/>
+    <label >Auto pilt</label> <br/>
+    <input ngModel name="pilt" type="text"><br/>
+    <label >Auto aktiivne</label> <br/>
+    <input ngModel name="aktiivne" type="checkbox"><br/>
+    <button mat-button color="primary">Lisa</button><br/>
+</form>

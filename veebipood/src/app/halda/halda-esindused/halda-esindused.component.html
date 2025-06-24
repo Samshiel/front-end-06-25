@@ -1,11 +1,17 @@
 <label >Esindus</label> <br/>
-<input [(ngModel)]="esindus" type="number"><br/>
+<input [(ngModel)]="esindus.keskus" type="number"><br/>
+<label >Telefon</label> <br/>
+<input [(ngModel)]="esindus.telefon" type="number"><br/>
+<label >Aadress</label> <br/>
+<input [(ngModel)]="esindus.aadress" type="number"><br/>
 <button (click)="lisa()">Lisa</button>
 <table>
     <thead>
         <tr>
             <th>Index</th>
-            <th>Hind</th>
+            <th>Keskus</th>
+            <th>Telefon</th>
+            <th>Aadress</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -13,7 +19,9 @@
         @for (esindus of tallinnaEsindused; track $index) {
             <tr>
                 <td>{{$index}}</td>
-                <td>{{esindus}}</td>
+                <td>{{esindus.keskus}}</td>
+                <td>{{esindus.telefon}}</td>
+                <td>{{esindus.aadress}}</td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

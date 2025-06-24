@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { AutoService } from '../services/auto.service';
 
 @Component({
   selector: 'app-lisa-toode',
@@ -9,14 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './lisa-toode.component.css'
 })
 export class LisaToodeComponent {
-  toode = "";
+  constructor(private autoService: AutoService) {}
 
-  lisa() {
-    if(this.toode === "") {
+  lisa(toodeVorm: NgForm) {
+    if(toodeVorm.value.nimi === "") {
       alert("Tühja nimetusega toodet ei saa lisada");
     } else {
-      alert("Toode lisatud: " + this.toode);
-      this.toode = "";
+      alert("Toode lisatud: " + toodeVorm.value.nimi);
+      this.autoService.autod.push(toodeVorm.value);
     }
   }
 }

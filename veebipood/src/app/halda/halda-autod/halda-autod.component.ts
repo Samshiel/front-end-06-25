@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AutoService } from '../../services/auto.service';
+import { Toode } from '../../models/toode';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-halda-autod',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './halda-autod.component.html',
   styleUrl: './halda-autod.component.css'
 })
 export class HaldaAutodComponent implements OnInit {  
-  autod: { nimi: string; hind: number; aktiivne: boolean; pilt: string; }[] = [];
+  autod: Toode[] = [];
   auto = { nimi: "", hind: 0, aktiivne: false, pilt: "" };
 
   constructor(private autoService: AutoService) {

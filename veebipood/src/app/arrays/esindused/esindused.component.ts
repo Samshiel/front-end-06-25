@@ -11,7 +11,7 @@ export class EsindusedComponent implements OnInit {
   constructor(private esindusService: EsindusService) {
   }
 
-  tallinnaEsindused: string[] = [];
+  tallinnaEsindused: { keskus: string; telefon: string; aadress: string; }[] = [];
   linn = "Tallinn";
 
   ngOnInit(): void {

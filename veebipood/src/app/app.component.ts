@@ -11,9 +11,16 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'veebipood';
+  isDark = JSON.parse(localStorage.getItem("mode") || "false");
 
   constructor(private translate: TranslateService) {
+    const keel = localStorage.getItem("keel") || "et";
     this.translate.addLangs(['et', 'en']);
-    this.translate.use('et');
+    this.translate.use(keel);
+  }
+
+  setDark() {
+    this.isDark = !this.isDark;
+    localStorage.setItem("mode", JSON.stringify(this.isDark))
   }
 }

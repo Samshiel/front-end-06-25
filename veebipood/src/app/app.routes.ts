@@ -23,6 +23,16 @@ import { HaldaEsindusedComponent } from './halda/halda-esindused/halda-esindused
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SingupComponent } from './auth/singup/singup.component';
+import { YksAutoComponent } from './yks/yks-auto/yks-auto.component';
+import { YksHindComponent } from './yks/yks-hind/yks-hind.component';
+import { YksKasutajaComponent } from './yks/yks-kasutaja/yks-kasutaja.component';
+import { YksTootajaComponent } from './yks/yks-tootaja/yks-tootaja.component';
+import { YksToodeComponent } from './yks/yks-toode/yks-toode.component';
+import { MuudaAutoComponent } from './muuda/muuda-auto/muuda-auto.component';
+import { MuudaHindComponent } from './muuda/muuda-hind/muuda-hind.component';
+import { MuudaKasutajaComponent } from './muuda/muuda-kasutaja/muuda-kasutaja.component';
+import { MuudaTootajaComponent } from './muuda/muuda-tootaja/muuda-tootaja.component';
+import { MuudaToodeComponent } from './muuda/muuda-toode/muuda-toode.component';
 
 export const routes: Routes = [
     {path: "", component: AvalehtComponent},
@@ -40,12 +50,27 @@ export const routes: Routes = [
     {path: "tooted", component: TootedComponent},
     {path: "halda-home", component: HaldaHomeComponent},
     {path: "halda-esindused", component: HaldaEsindusedComponent},
+    
+    {path: "auto/:mark", component: YksAutoComponent},
+    {path: "hind/:index", component: YksHindComponent},
+    {path: "kasutaja/:email", component: YksKasutajaComponent},
+    {path: "tootaja", component: YksTootajaComponent},
+    {path: "toode", component: YksToodeComponent},
+
+    {path: "muuda-auto/:index", component: MuudaAutoComponent},
+    {path: "muuda-hind/:index", component: MuudaHindComponent},
+    {path: "muuda-kasutaja/:index", component: MuudaKasutajaComponent},
+    {path: "muuda-tootaja/:index", component: MuudaTootajaComponent},
+    {path: "muuda-toode/:index", component: MuudaToodeComponent},
+
     {path: "halda-autod", component: HaldaAutodComponent},
     {path: "halda-hinnad", component: HaldaHinnadComponent},
     {path: "halda-kasutajad", component: HaldaKasutajadComponent},
     {path: "halda-tootajad", component: HaldaTootajadComponent},
     {path: "halda-tooted", component: HaldaTootedComponent},
+
     {path: "contact-us", component: ContactUsComponent},
+
     {path: "login", component:LoginComponent},
     {path: "signup", component:SingupComponent},
     {path: "**", component: NotFoundComponent}

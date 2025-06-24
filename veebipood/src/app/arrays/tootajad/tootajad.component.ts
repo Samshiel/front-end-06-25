@@ -11,12 +11,14 @@ import { TootajaService } from '../../services/tootaja.service';
 })
 export class TootajadComponent {
   fjaS = new FiltridJaSort();
-  tootajad: string[] = [];
+  tootajad: { eesnimi: string; pereNimi: string; vanus: number; aktiivne: boolean; ametikoht: string; }[] = [];
+  tootajateEesnimed: string[] = []
 
   constructor(private tootajadService: TootajaService) {}
   
   ngOnInit() {
     this.tootajad = this.tootajadService.tootajad.slice();
+    this.tootajateEesnimed = this.tootajad.map(tootaja => tootaja.eesnimi)
   }
   tootajadCopy = this.tootajad;
 }

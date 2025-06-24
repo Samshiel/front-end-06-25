@@ -9,8 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './halda-tootajad.component.css'
 })
 export class HaldaTootajadComponent {
-  tootajad: string[] = [];
-  tootaja = "";
+  tootajad: { eesnimi: string; pereNimi: string; vanus: number; aktiivne: boolean; ametikoht: string; }[] = [];
+  tootaja = { eesnimi: "", pereNimi: "", vanus: 0, aktiivne: false, ametikoht: "" };
 
   constructor(private tootajaService: TootajaService) {
   }
@@ -20,7 +20,7 @@ export class HaldaTootajadComponent {
   }
 
   lisa() {
-    if(this.tootaja.length === 0) {
+    if(this.tootaja.eesnimi.length === 0) {
       alert("Töötaja nimi ei saa olla tühi!")
       return;
     }

@@ -1,11 +1,20 @@
-<label >Tooted</label> <br/>
-<input [(ngModel)]="toode" type="text"><br/>
+<label >Toote nimi</label> <br/>
+<input [(ngModel)]="toode.nimi" type="text"><br/>
+<label >Toote hind</label> <br/>
+<input [(ngModel)]="toode.hind" type="number"><br/>
+<label >Toote pilt</label> <br/>
+<input [(ngModel)]="toode.pilt" type="text"><br/>
+<label >Toode aktiivne</label> <br/>
+<input [(ngModel)]="toode.aktiivne" type="checkbox"><br/>
 <button class="nupp" (click)="lisa()">Lisa</button>
 <table>
     <thead>
         <tr>
             <th>Index</th>
-            <th>Toodete nimed</th>
+            <th>Toote nimi</th>
+            <th>Toote hind</th>
+            <th>Toote Aktiivne</th>
+            <th>Toote Pilt</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -13,7 +22,10 @@
         @for (toode of tooted; track $index) {
             <tr>
                 <td>{{$index}}</td>
-                <td>{{toode}}</td>
+                <td>{{toode.nimi}}</td>
+                <td>{{toode.hind}}</td>
+                <td>{{toode.aktiivne}}</td>
+                <td><img class="pilt" src={{toode.pilt}}></td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

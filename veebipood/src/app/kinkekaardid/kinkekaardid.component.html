@@ -1,6 +1,6 @@
-<button (click)="summa = 20">20€</button>
-<button (click)="summa = 50">50€</button>
-<button (click)="summa = 100">100€</button>
+<button [class.aktiivne-summa]="summa === 20" (click)="summa = 20">20€</button>
+<button [class.aktiivne-summa]="summa === 50" (click)="summa = 50">50€</button>
+<button [class.aktiivne-summa]="summa === 100" (click)="summa = 100">100€</button>
 <div>Kinkekaart {{summa}} €</div>
 
 <br/><br/>

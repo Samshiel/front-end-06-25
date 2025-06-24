@@ -5,6 +5,7 @@
 <button (click)="filtreeriVaiksemadKui10()">Filtreeri väiksemad kui 10</button>
 @for (hind of hinnad; track $index) {
     <div>{{hind.number}} - {{hind.sonana}}</div>
+    <button routerLink="/hind/{{$index}}">Vt Lähemalt</button>
 }
 <br/>
 <button (click)="hinnad = hinnadCopy">Taasta</button> <br/>

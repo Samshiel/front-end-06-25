@@ -12,15 +12,15 @@ export class HaldaEsindusedComponent {
     constructor(private esindusService: EsindusService) {
     }
 
-    tallinnaEsindused: string[] = [];
-    esindus = "";
+    tallinnaEsindused: { keskus: string; telefon: string; aadress: string; }[] = [];
+    esindus = { keskus: "", telefon: "", aadress: "" };
   
     ngOnInit(): void {
       this.tallinnaEsindused = this.esindusService.tallinnaEsindused;
     }
   
     lisa() {
-      if(this.esindus.length === 0) {
+      if(this.esindus.keskus.length === 0) {
         alert("Esinduse nimi ei saa olla tühi!")
         return;
       }

@@ -11,4 +11,9 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class NavbarComponent {
     constructor(public translate: TranslateService) {
     }
+
+    kasutaKeelt(keel: string) {
+      this.translate.use(keel);
+      localStorage.setItem("keel", keel);
+    }
 }

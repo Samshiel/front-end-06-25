@@ -1,22 +1,21 @@
-<button (click)="tootajad = this.fjaS.sorteeriAZ(tootajad)">Sorteeri A-Z</button>
-<button (click)="tootajad = this.fjaS.sorteeriZA(tootajad)">Sorteeri Z-A</button>
-<button (click)="tootajad = this.fjaS.sorteeriSuurim(tootajad)">Sorteeri tähed kasvavalt</button>
-<button (click)="tootajad = this.fjaS.sorteeriVaiksem(tootajad)">Sorteeri tähed kahanevalt</button>
-<button (click)="tootajad = this.fjaS.sorteeriteineAZ(tootajad)">Sorteeri Teine täht A-Z</button>
-<button (click)="tootajad = this.fjaS.sorteeriSonadeArvu(tootajad)">Sorteeri sõnade arvu järgi</button>
+<button (click)="tootajateEesnimed = this.fjaS.sorteeriAZ(tootajateEesnimed)">Sorteeri A-Z</button>
+<button (click)="tootajateEesnimed = this.fjaS.sorteeriZA(tootajateEesnimed)">Sorteeri Z-A</button>
+<button (click)="tootajateEesnimed = this.fjaS.sorteeriSuurim(tootajateEesnimed)">Sorteeri tähed kasvavalt</button>
+<button (click)="tootajateEesnimed = this.fjaS.sorteeriVaiksem(tootajateEesnimed)">Sorteeri tähed kahanevalt</button>
+<button (click)="tootajateEesnimed = this.fjaS.sorteeriteineAZ(tootajateEesnimed)">Sorteeri Teine täht A-Z</button>
+<button (click)="tootajateEesnimed = this.fjaS.sorteeriSonadeArvu(tootajateEesnimed)">Sorteeri sõnade arvu järgi</button>
 <br/>
-<button (click)="tootajad = this.fjaS.filtreeriTapselt3Tahelised(tootajad)">Täpselt 3 tähelised</button>
-<button (click)="tootajad = this.fjaS.filtreeriRohkemKui5Tahelised(tootajad)">Rohkem kui 5 tähelised</button>
-<button (click)="tootajad = this.fjaS.filtreeriLyhendAi(tootajad)">"ai" lühendit sisaldavad</button>
-<button (click)="tootajad = this.fjaS.filtreeriKellelNeljasTahtI(tootajad)">Kellel on neljas täht "i"</button>
-<button (click)="tootajad = this.fjaS.filtreeriMTahegaAlgavad(tootajad)">'M' tähega algavad</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriTapselt3Tahelised(tootajateEesnimed)">Täpselt 3 tähelised</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriLyhendAi(tootajateEesnimed)">"ai" lühendit sisaldavad</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriKellelNeljasTahtI(tootajateEesnimed)">Kellel on neljas täht "i"</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriMTahegaAlgavad(tootajateEesnimed)">'M' tähega algavad</button>
 <br/>
-<button (click)="tootajad = this.fjaS.filtreeriPaarisArvTahti(tootajad)">Huvitav: Paarisarv tähti</button>
-<button (click)="tootajad = this.fjaS.filtreeriALoppuga(tootajad)">filtreeri a'ga lõppevad</button>
-<button (click)="tootajad = this.fjaS.filtreerivahemalt5Tahelised(tootajad)">vähemalt 5 tähelised</button>
-<button (click)="tootajad = this.fjaS.filtreeriTapselt5tahelised(tootajad)">täpselt 5 tähelised</button>
-<button (click)="tootajad = this.fjaS.filtreeriLyhendigaIn(tootajad)">'in' lühendit sisaldavad</button>
-<button (click)="tootajad = this.fjaS.filtreeriKellelTeineTahtA(tootajad)">kellel on 2's täht "a"</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriPaarisArvTahti(tootajateEesnimed)">Huvitav: Paarisarv tähti</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriALoppuga(tootajateEesnimed)">filtreeri a'ga lõppevad</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreerivahemalt5Tahelised(tootajateEesnimed)">vähemalt 5 tähelised</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriTapselt5tahelised(tootajateEesnimed)">täpselt 5 tähelised</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriLyhendigaIn(tootajateEesnimed)">'in' lühendit sisaldavad</button>
+<button (click)="tootajateEesnimed = this.fjaS.filtreeriKellelTeineTahtA(tootajateEesnimed)">kellel on 2's täht "a"</button>
 <br/><br/>
 
 @for (tootaja of tootajad; track $index) {

@@ -10,14 +10,21 @@ import { OstukorvService } from '../services/ostukorv.service';
 export class OstukorvComponent implements OnInit{
   tooted: { nimi: string; hind: number; aktiivne: boolean; pilt: string; }[] = [];
 
-  constructor(private ostuKorvService: OstukorvService) {}
+  // constructor(private ostuKorvService: OstukorvService) {}
 
   ngOnInit(): void {
-    this.tooted = this.ostuKorvService.ostukorv;
+    // this.tooted = this.ostuKorvService.ostukorv;
+    this.tooted = JSON.parse(localStorage.getItem("ostukorv")|| "[]");
   }
 
   kustuta(i: number) {
     this.tooted.splice(i, 1);
+    localStorage.setItem("osukorv", JSON.stringify(this.tooted));
+  }
+
+  empty() {
+    this.tooted = [];
+    localStorage.setItem("osukorv", JSON.stringify(this.tooted));
   }
 
   arvutaKogusumma() {

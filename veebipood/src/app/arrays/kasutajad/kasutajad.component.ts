@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { KasutajaService } from '../../services/kasutaja.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-kasutajad',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './kasutajad.component.html',
   styleUrl: './kasutajad.component.css'
 })
