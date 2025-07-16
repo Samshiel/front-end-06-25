@@ -1,0 +1,11 @@
+<form #loginVorm="ngForm" (submit)="logiSisse(loginVorm)">
+    @if (sisselogitud) {
+        <div>Olete juba sisse loginud</div>
+    } @else {
+        <label>Email</label>
+        <input ngModel required name="email" type="text"><br/>
+        <label>Parool</label>
+        <input ngModel required name="parool" type="password"><br/>
+        <button [disabled]="!loginVorm.valid">Logi Sisse</button>
+    }   
+</form>

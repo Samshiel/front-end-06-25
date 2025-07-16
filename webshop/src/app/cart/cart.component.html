@@ -1,0 +1,12 @@
+@if (cart.length > 0) {
+    <div>There is currently {{cart.length}} products in the cart, with the total cost of - {{totalCost}}€</div>
+    <div class="line"></div> <br/><br/>
+    @for (item of cart; track $index) {
+        <span>{{item.title}}</span>
+        <button type="button" class="btn btn-secondary btn-sm delete-button" (click)="removeItem($index)">X</button><br/>
+    }
+    <br/><br/>
+    <button type="button" class="btn btn-secondary btn-sm" (click)="emptyCart()">Empty</button>
+} @else {
+    <div>Cart is empty</div>
+}

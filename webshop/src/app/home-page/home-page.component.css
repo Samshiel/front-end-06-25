@@ -1,0 +1,35 @@
+.picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+}
+
+.box {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--bs-secondary);
+    margin-bottom: 16px;
+}
+
+.box-active {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--bs-danger);
+    margin-bottom: 16px;
+}
+
+.search {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.search-button {
+    margin-left: 2px;
+}
+
+button {
+    padding: auto;
+    text-align: center;
+    margin-right: 2px;
+}

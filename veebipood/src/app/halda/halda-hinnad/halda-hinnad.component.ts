@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HindService } from '../../services/hind.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-halda-hinnad',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './halda-hinnad.component.html',
   styleUrl: './halda-hinnad.component.css'
 })

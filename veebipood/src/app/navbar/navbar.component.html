@@ -31,13 +31,21 @@
             <li class="nav-item">
             <a class="nav-link" routerLink="/contact-us">{{'nav.contact-us' | translate}}</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" routerLink="/profiil">{{'nav.profiil' | translate}}</a>
+            </li>
         </ul>
         <button class="nupp" (click)="kasutaKeelt('et')">ET</button>
         <button class="nupp" (click)="kasutaKeelt('en')">EN</button> <br/>
-        <span routerLink="/login">Login </span>
-        <span>|</span>
-        <span routerLink="/signup"> Registeeru</span>
+        @if (sisseLogitud) {
+            <span (click)="logOut()">Logout as {{kasutaja?.nimi}}</span>
+        } @else {
+            <span routerLink="/login-home">Login </span>
+            <span>|</span>
+            <span routerLink="/signup"> Registeeru</span>
+        }
         <div class="dash"></div>
+        <div>{{ostuKorviSumma}}</div>
         </div>
     </div>
     </nav>

@@ -8,7 +8,12 @@
 @for (toode of tooted; track $index) {
     <span>{{toode.nimi}}</span>
     <button class="nupp" (click)="kustuta($index)">x</button>
-    <br/>
+    <br/><br/>
+    <select>
+        @for (pakiautomaat of pakiautomaadid; track $index) {
+            <option>{{pakiautomaat.name}}</option>
+        }
+    </select>
 }
 
 @if (tooted.length > 0) {

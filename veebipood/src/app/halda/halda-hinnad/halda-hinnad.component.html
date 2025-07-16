@@ -9,6 +9,7 @@
             <th>Index</th>
             <th>Hind</th>
             <th>Sõna</th>
+            <th>Muuda</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -18,6 +19,7 @@
                 <td>{{$index}}</td>
                 <td>{{hind.number}}</td>
                 <td>{{hind.sonana}}</td>
+                <td><button class="nupp" routerLink="/muuda-hind/{{$index}}">x</button></td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

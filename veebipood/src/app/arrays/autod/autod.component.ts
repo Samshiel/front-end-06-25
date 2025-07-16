@@ -76,6 +76,7 @@ lisaOstuKorvi(auto: Toode) {
   const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv") || "[]");
   ostukorvLS.push(auto);
   localStorage.setItem("osukorv", JSON.stringify(ostukorvLS));
+  this.ostukorService.ostuKorv$.next(null);
 }
 
 otsi() {

@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Rating</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of products; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td>{{ product!.rating.rate }} ({{ product!.rating.count }} reviews)</td>
+                <td><img class="image" src={{product.image}}></td>
+                <td><button (click)="delete($index)">x</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

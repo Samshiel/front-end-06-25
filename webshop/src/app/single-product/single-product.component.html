@@ -1,0 +1,11 @@
+@if (product) {
+  <h2>{{ product!.title }}</h2>
+  <img [src]="product!.image" [alt]="product!.title" class="image" />
+  <p><strong>ID:</strong> {{ product!.id }}</p>
+  <p><strong>Price:</strong> {{ product!.price }}€</p>
+  <p><strong>Description:</strong> {{ product!.description }}</p>
+  <p><strong>Category:</strong> {{ product!.category }}</p>
+  <p><strong>Rating:</strong> {{ product!.rating.rate }} ({{ product!.rating.count }} reviews)</p>
+} @else {
+  <p>Product not found.</p>
+}

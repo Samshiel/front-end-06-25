@@ -33,6 +33,16 @@ import { MuudaHindComponent } from './muuda/muuda-hind/muuda-hind.component';
 import { MuudaKasutajaComponent } from './muuda/muuda-kasutaja/muuda-kasutaja.component';
 import { MuudaTootajaComponent } from './muuda/muuda-tootaja/muuda-tootaja.component';
 import { MuudaToodeComponent } from './muuda/muuda-toode/muuda-toode.component';
+import { MuudaEsindusComponent } from './muuda/muuda-esindus/muuda-esindus.component';
+import { YksEsindusComponent } from './yks/yks-esindus/yks-esindus.component';
+import { Tarnija1Component } from './tarnijad/tarnija1/tarnija1.component';
+import { Tarnija2Component } from './tarnijad/tarnija2/tarnija2.component';
+import { Tarnija3Component } from './tarnijad/tarnija3/tarnija3.component';
+import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
+import { ProfiilComponent } from './auth/profiil/profiil.component';
+import { Login2Component } from './auth/login2/login2.component';
+import { Login3Component } from './auth/login3/login3.component';
+import { LoginHomeComponent } from './auth/login-home/login-home.component';
 
 export const routes: Routes = [
     {path: "", component: AvalehtComponent},
@@ -56,22 +66,36 @@ export const routes: Routes = [
     {path: "kasutaja/:email", component: YksKasutajaComponent},
     {path: "tootaja", component: YksTootajaComponent},
     {path: "toode", component: YksToodeComponent},
+    {path: "esindus", component: YksEsindusComponent},
 
     {path: "muuda-auto/:index", component: MuudaAutoComponent},
     {path: "muuda-hind/:index", component: MuudaHindComponent},
     {path: "muuda-kasutaja/:index", component: MuudaKasutajaComponent},
     {path: "muuda-tootaja/:index", component: MuudaTootajaComponent},
     {path: "muuda-toode/:index", component: MuudaToodeComponent},
+    {path: "muuda-esindus/:index", component: MuudaEsindusComponent},
 
     {path: "halda-autod", component: HaldaAutodComponent},
     {path: "halda-hinnad", component: HaldaHinnadComponent},
     {path: "halda-kasutajad", component: HaldaKasutajadComponent},
     {path: "halda-tootajad", component: HaldaTootajadComponent},
     {path: "halda-tooted", component: HaldaTootedComponent},
+    {path: "halda-esindused", component: HaldaEsindusedComponent},
+
+    {path: "tarnija1", component: Tarnija1Component},
+    {path: "tarnija2", component: Tarnija2Component},
+    {path: "tarnija3", component: Tarnija3Component},    
 
     {path: "contact-us", component: ContactUsComponent},
 
+    {path: "kaart", component: LeafletMapComponent},
+
+    {path: "login-home", component:LoginHomeComponent},
     {path: "login", component:LoginComponent},
+    {path: "login2", component:Login2Component},
+    {path: "login3", component:Login3Component},
     {path: "signup", component:SingupComponent},
+    {path: "profiil", component: ProfiilComponent},
+
     {path: "**", component: NotFoundComponent}
 ];

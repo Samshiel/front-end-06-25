@@ -9,9 +9,10 @@
     <thead>
         <tr>
             <th>Index</th>
-            <th>Keskus</th>
+            <th>Keskus</th> 
             <th>Telefon</th>
             <th>Aadress</th>
+            <th>Muuda</th>
             <th>Kustuta</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
                 <td>{{esindus.keskus}}</td>
                 <td>{{esindus.telefon}}</td>
                 <td>{{esindus.aadress}}</td>
+                <td><button class="nupp" routerLink="/muuda-esindus/{{$index}}">x</button></td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>
         }

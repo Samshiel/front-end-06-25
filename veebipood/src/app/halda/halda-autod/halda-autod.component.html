@@ -1,12 +1,12 @@
 <label >Auto</label> <br/>
-<input [(ngModel)]="auto.nimi" type="text"><br/>
+<input [(ngModel)]="auto.nimi" type="text" (ngModelChange)="kasUnikaalne()"><br/>
 <label >Auto hind</label> <br/>
 <input [(ngModel)]="auto.hind" type="number"><br/>
 <label >Auto pilt</label> <br/>
 <input [(ngModel)]="auto.pilt" type="text"><br/>
 <label >Auto aktiivne</label> <br/>
 <input [(ngModel)]="auto.aktiivne" type="checkbox"><br/>
-<button class="nupp" (click)="lisa()">Lisa</button>
+<button class="nupp" [disabled]="nuppAktiivne" (click)="lisa()">Lisa</button>
 <table>
     <thead>
         <tr>
@@ -14,7 +14,8 @@
             <th>Auto nimi</th>
             <th>Auto hind</th>
             <th>Aktiivne</th>
-            <th>AutoPilt</th>
+            <th>Auto Pilt</th>
+            <th>Auti pildi URL</th>
             <th>Muuda</th>
             <th>Kustuta</th>
         </tr>
@@ -23,10 +24,11 @@
         @for (auto of autod; track $index) {
             <tr>
                 <td>{{$index}}</td>
-                <td>{{auto.nimi}}</td>
-                <td>{{auto.hind}}</td>
+                <td>{{auto.nimi | shortener: 10}}</td>
+                <td>{{auto.hind | price}}</td>
                 <td>{{auto.aktiivne}}</td>
                 <td><img class="pilt" src={{auto.pilt}}></td>
+                <td><div>{{auto.pilt | shortener: 20}}</div></td>
                 <td><button class="nupp" routerLink="/muuda-auto/{{$index}}">x</button></td>
                 <td><button class="nupp" (click)="kustuta($index)">x</button></td>
             </tr>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OstukorvService } from '../services/ostukorv.service';
+import { PakiautomaatService } from '../services/pakiautomaat.service';
 
 @Component({
   selector: 'app-ostukorv',
@@ -9,12 +10,17 @@ import { OstukorvService } from '../services/ostukorv.service';
 })
 export class OstukorvComponent implements OnInit{
   tooted: { nimi: string; hind: number; aktiivne: boolean; pilt: string; }[] = [];
+  pakiautomaadid: any[] = [];
 
-  // constructor(private ostuKorvService: OstukorvService) {}
+  constructor(private pakiAutomaatService: PakiautomaatService) {}
 
   ngOnInit(): void {
     // this.tooted = this.ostuKorvService.ostukorv;
     this.tooted = JSON.parse(localStorage.getItem("ostukorv")|| "[]");
+    this.pakiAutomaatService.saaPakiAutomaadid().subscribe(vastus => {
+      this.pakiautomaadid = vastus.filter((automaat: { A0_NAME: string; }) => automaat.A0_NAME === "EE");
+      console.log(this.pakiautomaadid);
+    });
   }
 
   kustuta(i: number) {

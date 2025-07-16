@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { EsindusService } from '../../services/esindus.service';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { Esindus } from '../../models/esindus';
 
 @Component({
   selector: 'app-halda-esindused',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './halda-esindused.component.html',
   styleUrl: './halda-esindused.component.css'
 })
@@ -12,7 +14,7 @@ export class HaldaEsindusedComponent {
     constructor(private esindusService: EsindusService) {
     }
 
-    tallinnaEsindused: { keskus: string; telefon: string; aadress: string; }[] = [];
+    tallinnaEsindused: Esindus[] = [];
     esindus = { keskus: "", telefon: "", aadress: "" };
   
     ngOnInit(): void {

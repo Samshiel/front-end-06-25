@@ -1,0 +1,11 @@
+<form [formGroup]="loginForm" (submit)="logiSisse()">
+    @if (sisselogitud) {
+        <div>Olete juba sisse loginud</div>
+    } @else {
+        <label>Email</label>
+        <input formControlName="email" name="email" type="text"><br/>
+        <label>Parool</label>
+        <input formControlName="parool" name="parool" type="password"><br/>
+        <button [disabled]="!loginForm.valid">Logi Sisse</button>
+    }   
+</form>

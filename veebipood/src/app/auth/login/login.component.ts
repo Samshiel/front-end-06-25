@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.sisselogitud = this.kasutajaService.sisseLogitud;
+    this.kasutajaService.sisseLogitud.subscribe(vastus => {
+      this.sisselogitud = vastus;
+    });
   }
 
   logiSisse() {
@@ -31,7 +33,8 @@ export class LoginComponent implements OnInit {
       return;
     }
     alert("Sisse logitud");
-    this.kasutajaService.sisseLogitud = true;
+    sessionStorage.setItem("token", this.kasutaja.email);
+    this.kasutajaService.sisseLogitud.next(true);
     this.router.navigate(["/"])
   }
 }

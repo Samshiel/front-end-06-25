@@ -1,0 +1,12 @@
+<app-home-page-filters/>
+<form class="search">
+    <input [(ngModel)]="searchKeyWord" name="search" type="search" placeholder="Search" aria-label="Search">
+    <button type="button" class="search-button btn btn-secondary btn-sm" (click)="search()" type="submit">Search</button>
+</form>
+@for (product of products; track $index) {
+    <div (click)="toggleProduct($index)" (mousedown)="startHold(product.id)" (mouseup)="cancelHold()" (mouseleave)="cancelHold()" [ngClass]="{'box': !product.active, 'box-active': product.active}">
+        <img src="{{product.image}}" class="picture">
+        <div>{{product.title}}</div>
+        <div>{{product.price}}€</div>
+    </div>
+}

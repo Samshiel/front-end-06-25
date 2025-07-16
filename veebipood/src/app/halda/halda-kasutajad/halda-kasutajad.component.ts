@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KasutajaService } from '../../services/kasutaja.service';
 import { FormsModule } from '@angular/forms';
+import { Kasutaja } from '../../models/kasutaja';
 
 @Component({
   selector: 'app-halda-kasutajad',
@@ -15,8 +16,9 @@ export class HaldaKasutajadComponent implements OnInit {
     this.kasutajad = this.kasutajaService.kasutajad;
   }
 
-  kasutajad: { email: string; parool: string; }[] = [];
+  kasutajad: Kasutaja[] = [];
   kasutaja = {
+      nimi: "123",
       email: "000@hotmail.com",
       parool: "000"
   };

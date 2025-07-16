@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SingupComponent {
   parooliKordus = "";
-  kasutaja =  { email: "", parool: "" };
+  kasutaja =  {nimi: "", email: "", parool: "" };
 
   constructor(
     private kasutajaService: KasutajaService,

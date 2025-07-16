@@ -1,0 +1,11 @@
+@if (!esindus) {
+    <div>Esindust ei leitud</div>
+} @else {
+    <label>Esinduse Keskus</label> <br/>
+    <input [(ngModel)]="esindus.keskus" type="text">
+    <label>Esinduse Aadress</label> <br/>
+    <input [(ngModel)]="esindus.aadress" type="text">
+    <label>Esinduse Telefon</label> <br/>
+    <input [(ngModel)]="esindus.telefon" type="text">
+    <button (click)="muuda()">Muuda</button>
+}

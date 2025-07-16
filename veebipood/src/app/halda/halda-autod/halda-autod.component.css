@@ -19,3 +19,11 @@
     height: 50px;
     border-radius: 10px;
 }
+
+table{
+    margin: auto;
+}
+
+td, th {
+    border: 1px solid black;
+}

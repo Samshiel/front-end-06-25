@@ -1,1 +1,9 @@
-<p>muuda-hind works!</p>
+@if (!hind) {
+    <div>Sellist hinda ei leitud</div>
+} @else {
+    <label>Hinna Number</label><br/>
+    <input [(ngModel)]="hind.number" type="number">
+    <label>Hind sõnana</label><br/>
+    <input [(ngModel)]="hind.sonana" type="text">
+    <button (click)="muuda()">Muuda</button>
+}
